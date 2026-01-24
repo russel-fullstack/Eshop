@@ -8,7 +8,6 @@
     scroll-behavior: smooth;
 }
 body{
-
     overflow-x: hidden;
 }
 header{
@@ -18,7 +17,7 @@ header{
     position: sticky;
     z-index: 100;
     top: 0;
-    padding: 35px;
+    padding: 20px 35px;
     margin-bottom: 35px;
     border-bottom: 0px solid rgb(245, 201, 230);
     box-shadow: 0px 0px 7px 0px #a8a5a8 ;
@@ -43,6 +42,7 @@ header div{
 header nav ul{
     display: flex;
     gap: 45px;
+    font-weight: bold;
     font-size: 23px;
 }
 .icons{
@@ -53,14 +53,14 @@ header nav ul{
 
 .image ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 45px;
-    padding: 20px;
     flex-wrap: wrap;
-    margin-top: 10px;
-    margin-left: 40px;
+    margin-bottom: 40px;
 }
 .image ul .eshop:hover{
-    transform: scale(1.03);
+    transform: translateY(-10px);
     transition: 0.3s ease-in-out;
 }
 /* .eshop:hover{
@@ -108,31 +108,37 @@ header nav ul{
     border-color: #f0f0f0;
 }
 .button_basket{
-    padding: 10px 20px;
+    padding: 10px 30px;
     background-color: deeppink;
     margin-top: 35px;
-    margin-left: 85px;
+    margin-left: 35px;
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     clip-path: polygon(15% 0, 0 100%, 85% 100%, 100% 0);
 }
 #nouveautés ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 25px;
+    align-items: flex-start;
+    margin: 30px 35px 0 35px;
+}
+#nouveautés ul::-webkit-scrollbar-thumb{
+    display: none;
 }
 #nouveautés ul li{
     border: none;
-    background-color: #ece6e6;
+    background-color: #ece6e6de;
     text-align: center;
     position: relative;
 }
 #nouveautés ul li .button_basket{
     position: absolute;
-    top: 100px;
-    right: 90px;
+    top: 95px;
+    right: 50px;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-130px);
@@ -150,7 +156,7 @@ header nav ul{
     transform: translateY(0);
 }
 #nouveautés ul li:hover{
-    background-color: #949191d7;
+    background-color: #c4bfbfc0;
     cursor: context-menu;
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
@@ -160,11 +166,7 @@ header nav ul{
     filter: blur(1px);
 }
 #produit{
-    display: flex;
-    flex-wrap: wrap;
     padding: 50px;
-    margin: 20px;
-    justify-content: center;
     position: relative;
 }
 #produit ::before{
@@ -172,9 +174,9 @@ header nav ul{
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 37%;
+    width: 35%;
     top: 75px;
-    left: 0;
+    left: 35px;
 }
 #produit ::after{
     content: "";
@@ -183,7 +185,7 @@ header nav ul{
     height: 5px;
     width: 35%;
     top: 75px;
-    margin-left: 200px;
+    right: 35px;
 }
 .title_avis{
     font-size: 35px;
@@ -200,20 +202,17 @@ header nav ul{
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 40%;
-    margin-right: 100px;
-    margin-left: 10px;
-    left: 0;
+    width: 30%;
+    top: 60px;
+    left: 45px;
 }
 .title_avis::after{
     content: "";
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 40%;
-    margin-left: 100px;
-    margin-right: -1px;
-    right: 0;
+    width: 30%;
+    right: 45px;
     top: 60px;
 }
 
@@ -221,40 +220,50 @@ header nav ul{
     content: "";
     position: relative;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    margin-top: 24px;
 }
 .news_1 ::before{
     content: "";
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 32%;
-    margin-right: 100px;
-    margin-left: 23px;
-    left: 0;
-    top: 35px;
+    width: 30%;
+    left: 50px;
+    top: 30px;
 }
 .news_1 ::after{
     content: "";
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 32%;
-    margin-left: 23px;
-    top: 35px;
-    right: 0;
+    width:  30%;
+    top: 30px;
+    right: 50px;
 }
 .news_2{
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
+    position: relative;
 }
-.news_2 ::before{
+/* .news_2 ::before{
     content: "";
     position: absolute;
     background-color: #ff00b3;
     height: 5px;
-    width: 100%;
+    width: 20%;
+    top: 30px;
+    left: 50px;
 }
+.news_2 ::after {
+    content: "";
+    position: absolute;
+    background-color: #ff00b3;
+    height: 5px;
+    width: 20%;
+    top: 30px;
+    right: 50px;
+} */
 header nav ul a{
     text-decoration: none;
     color: #3f3939;
@@ -262,7 +271,6 @@ header nav ul a{
 }
 header nav ul a:hover{
     color: #ff00b3;
-    font-weight: bold;
 }
 section{
     display: flex;
@@ -274,7 +282,12 @@ section{
     border: 2px solid red;
     padding: 0px 5px;
 }
-
+.hero_section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
 .hero_content{
     color:#2b2828;
     line-height: 1;
@@ -284,8 +297,7 @@ section{
     flex-direction: column;
     margin-top: 5px;
     margin-left: 30px;
-    line-height: 1,2px;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 } 
 
 .hero_content p{
@@ -295,9 +307,9 @@ section{
 .hero_content h1{
     color: black;
     font-weight: bold;
-    font-size: 98px; 
+    font-size: 80px; 
     display: flex;
-    margin: 5px;
+    margin: 5px 0;
 }
 /* .hero_image{
     animation: anim 3s linear infinite;
@@ -351,7 +363,7 @@ section{
     gap: 5px;
 }
 .gallery-grid .gallery-item{
-    padding: 40px;
+    padding: 10px;
     text-align: center;
     border: 1px solid rgb(173, 161, 161);
     border-bottom: 5px solid deeppink;
@@ -365,7 +377,6 @@ section{
     cursor: pointer;
 }
 .gallery-grid .gallery-item img{
-    border: 0px solid;
     border-radius: 50%;
     object-fit: cover;    
 }
