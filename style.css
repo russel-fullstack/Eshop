@@ -306,6 +306,7 @@ section{
 }
 .hero_image{
     width: 50%;
+    height: 300px;
 }
 .hero_image img{
     height: 450px;
