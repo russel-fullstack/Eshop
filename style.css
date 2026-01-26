@@ -6,9 +6,12 @@
     list-style: none;
     font-family: 'Times New Roman', Times, serif;
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 body{
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
 }
 header{
     background-color: white;
@@ -21,9 +24,7 @@ header{
     margin-bottom: 35px;
     border-bottom: 0px solid rgb(245, 201, 230);
     box-shadow: 0px 0px 7px 0px #a8a5a8 ;
-    width: 100vw;
-    
-    
+    width: 100%;
 }
 header div{
     display: flex;
@@ -45,6 +46,14 @@ header nav ul{
     font-weight: bold;
     font-size: 23px;
 }
+.menutoggle{
+    display: none;
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+    color: #726868;
+    cursor: pointer;
+}
 .icons{
     display: flex;
     gap: 20px;
@@ -63,14 +72,11 @@ header nav ul{
     transform: translateY(-10px);
     transition: 0.3s ease-in-out;
 }
-/* .eshop:hover{
-    box-shadow: 50px #050505;
-    } */
 .habit{
     border: 25px solid white;
     background-color: white;
     border-bottom: none;
-    box-shadow: 0px 5px 10px 5px rgba(167, 153, 153, 0.678);
+    box-shadow: 0px 5px 5px 5px rgba(214, 210, 210, 0.486);
     
 }
 .habit_1{
@@ -79,7 +85,10 @@ header nav ul{
     border-top: none;
     border-bottom: none;
     border-right: none;
-    box-shadow: 0px 15px 10px 5px rgba(167, 153, 153, 0.678);
+    box-shadow: 0px 13px 5px 5px rgba(214, 210, 210, 0.486);
+}
+.habit li img{
+    height: 450px;
 }
 .habit:hover img{
     -webkit-transform: scaleX(-1);
@@ -87,8 +96,6 @@ header nav ul{
     transition: .3s ease-in-out;
 }
 .add{
-    /* margin: 15px 0px 0px 50px;
-    padding: 10px; */
     display: flex;
     justify-content: flex-end;
     margin-right: 0;
@@ -119,15 +126,12 @@ header nav ul{
 #nouveautés ul{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     gap: 25px;
-    align-items: flex-start;
     margin: 30px 35px 0 35px;
-}
-#nouveautés ul::-webkit-scrollbar-thumb{
-    display: none;
+    scrollbar-width: none;
 }
 #nouveautés ul li{
     border: none;
@@ -144,6 +148,9 @@ header nav ul{
     transform: translateY(-130px);
     transition: all 0.5s ease;
     z-index: 1;
+}
+#nouveautés ul li img{
+    height: 320px;
 }
 #nouveautés ul li .button_basket:hover{
     background-color: rgb(196, 7, 108);
@@ -190,7 +197,8 @@ header nav ul{
 .title_avis{
     font-size: 35px;
     text-align: center;
-    padding: 55px;
+    padding: 45px;
+    margin-top: 36px;
     position: relative;
 }
 .title_avis h4{
@@ -221,7 +229,7 @@ header nav ul{
     position: relative;
     text-align: center;
     font-size: 30px;
-    margin-top: 24px;
+    margin-top: 36px;
 }
 .news_1 ::before{
     content: "";
@@ -245,29 +253,11 @@ header nav ul{
     text-align: center;
     font-size: 30px;
     position: relative;
+    margin-top: 36px;
 }
-/* .news_2 ::before{
-    content: "";
-    position: absolute;
-    background-color: #ff00b3;
-    height: 5px;
-    width: 20%;
-    top: 30px;
-    left: 50px;
-}
-.news_2 ::after {
-    content: "";
-    position: absolute;
-    background-color: #ff00b3;
-    height: 5px;
-    width: 20%;
-    top: 30px;
-    right: 50px;
-} */
 header nav ul a{
     text-decoration: none;
     color: #3f3939;
-    /* transition: color 300ms; */
 }
 header nav ul a:hover{
     color: #ff00b3;
@@ -287,6 +277,8 @@ section{
     justify-content: space-around;
     align-items: center;
     gap: 20px;
+    padding-bottom: 36px;
+    width: 100%;
 }
 .hero_content{
     color:#2b2828;
@@ -298,10 +290,11 @@ section{
     margin-top: 5px;
     margin-left: 30px;
     margin-bottom: 70px;
+    width: 50%;
 } 
 
 .hero_content p{
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 0;
 }
 .hero_content h1{
@@ -309,19 +302,14 @@ section{
     font-weight: bold;
     font-size: 80px; 
     display: flex;
-    margin: 5px 0;
+    padding: 10px 0;
 }
-/* .hero_image{
-    animation: anim 3s linear infinite;
+.hero_image{
+    width: 50%;
 }
-@keyframes anim{
-    0%, 100%{
-        transform: translateY(-3.5rem);
-    }
-    50%{
-        transform: translateY(1rem);
-    }
-} */
+.hero_image img{
+    height: 450px;
+}
 .button{
     padding: 20px;
     margin-top: 30px;
@@ -356,18 +344,21 @@ section{
     font-size: 25px;
     margin-bottom: 20px;
 }
-.gallery-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 0px 50px 50px 100px;
-    gap: 5px;
+.gallery-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin: 0 50px 50px 50px;
 }
 .gallery-grid .gallery-item{
     padding: 10px;
     text-align: center;
     border: 1px solid rgb(173, 161, 161);
     border-bottom: 5px solid deeppink;
-    box-shadow: 0px 0px 20px 5px rgba(194, 192, 192, 0.733);
+    box-shadow: 0px 0px 10px 5px rgba(194, 192, 192, 0.733);
     width: 75%;
     gap: 0;
 }
@@ -397,4 +388,343 @@ footer {
     text-align: center;
     padding: 10px;
     font-size: 20px;
+}
+
+@media(max-width: 1030px){
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 35px;
+        margin-bottom: 35px;
+    }
+    header nav ul {
+        display: flex;
+        gap: 35px;
+        font-size: 19px;
+    }
+        .hero_content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    
+        .hero_content p {
+            font-size: 19px;
+        }
+    
+        .hero_content h1 {
+            font-size: 55px;
+        }
+    
+        .hero_image img {
+            height: 350px;
+        }
+        .button {
+            font-size: 22px;
+            font-family: italic;
+            clip-path: polygon(15% 0, 0 100%, 85% 100%, 100% 0);
+
+        }
+        .hero_section {
+            padding-bottom: 10px;
+        }
+        .news_1 {
+            font-size: 20px;
+        }
+        .news_1 ::before {
+            left: 50px;
+            top: 25px;
+        }
+    
+        .news_1 ::after {
+            top: 25px;
+            right: 50px;
+        }
+        #produit ::before {
+            width: 32%;
+            left: 50px;
+        }
+        #produit ::after{
+            width: 32%;
+            right: 50px;
+        }
+        .habit li img {
+            height: 350px;
+        }
+        .button_add {
+            padding: 15px 12px;
+            font-size: 18px;
+    
+        }
+        .habit {
+            border-bottom: none;
+
+        }
+
+        .habit_1 {
+            border-top: none;
+        }
+        .title_avis {
+            font-size: 30px;
+            margin-top: 55px;
+        }
+    
+        .title_avis::before {
+            height: 5px;
+            width: 30%;
+            top: 60px;
+            left: 45px;
+        }
+    
+        .title_avis::after {
+            height: 5px;
+            width: 30%;
+            right: 45px;
+            top: 60px;
+        }
+        .gallery-grid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            margin-left: 50px;
+        }
+        .gallery-grid .gallery-item p{
+            font-size: 12px;
+        }
+}
+@media(max-width: 850px){
+    header nav ul {
+        display: none;
+    }
+    .menutoggle{
+        display: block;
+    }
+    .hero_content{
+    width: 50%;
+    }
+    .hero_image{
+        width: 50%;
+    }
+    .hero_content p {
+        font-size: 15px;
+    }
+
+    .hero_content h1 {
+        font-size: 45px;
+    }
+
+    .hero_image img {
+        height: 300px;
+    }
+    .button {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+
+    }
+    .hero_section {
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+    .news_1 {
+        font-size: 20px;
+    }
+    .news_1 ::before {
+        top: 20px;
+        width: 27%;
+    }
+
+    .news_1 ::after {
+        top: 20px;
+        width: 27%;
+    }
+    #produit ::before {
+        width: 30%;
+        left: 50px;
+    }
+    #produit ::after{
+        width: 30%;
+        right: 50px;
+    }
+    #nouveautés ul li img {
+        height: 300px;
+    }
+    .news_2{
+        font-size: 28px;
+    }
+    .habit li img {
+        height: 380px;
+    }
+    .button_add {
+        padding: 16px 14px;
+        font-size: 18px;
+
+    }
+    .habit {
+        border-bottom: none;
+
+    }
+
+    .habit_1 {
+        border-top: none;
+    }
+    .title_avis {
+        font-size: 30px;
+        margin-top: 55px;
+    }
+
+    .title_avis::before {
+        height: 5px;
+        width: 30%;
+        left: 50px;
+    }
+
+    .title_avis::after {
+        height: 5px;
+        width: 30%;
+        right: 50px;
+    }
+    .gallery-grid{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       gap: 20px;
+       flex-wrap: nowrap;
+       flex-direction: row;
+       margin-left: 50px;
+    }
+    footer{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        font-size: medium;
+
+    }
+}
+@media(max-width: 640px){
+    .hero_section{
+        flex-direction: column;
+        gap: 0;
+    }
+    .hero_content{
+        width: 100%;
+        margin-bottom: 0;
+    }
+    .hero_image{
+        width: 100%;
+        margin-left: 50px;
+    }
+    .hero_content p {
+        font-size: 15px;
+    }
+
+    .hero_content h1 {
+        font-size: 45px;
+    }
+
+    .hero_image img {
+        height: 300px;
+    }
+    .button {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+
+    }
+    header div p {
+        font-size: 24px;
+    }
+    .icons{
+        gap: 10px;
+        font-size: 18px;
+    }
+    .news_1 {
+        font-size: 20px;
+    }
+    .news_1 ::before {
+        top: 20px;
+        left: 30px;
+        height: 3px;
+        width: 15%;
+    }       
+    .news_1 ::after {
+        top: 20px;
+        height: 3px;
+        right: 30px;
+        width: 15%;
+    }
+    #produit ::before {
+        width: 15%;
+        height: 3px;
+        left: 45px;
+    }
+
+    #produit ::after {
+        width: 15%;
+        height: 3px;
+        right: 45px;
+    }
+    #nouveautés ul{
+        padding: 0 20px;
+    }
+    #nouveautés ul li img {
+        height: 310px;
+    }
+    .news_2{
+        font-size: 25px;
+    }
+    .habit li img {
+        height: 350px;
+    }
+    .button_add {
+        padding: 14px 12px;
+        font-size: 16px;
+
+    }
+    .habit {
+        border-bottom: none;
+
+    }
+
+    .habit_1 {
+        border-top: none;
+    }
+    .title_avis {
+        font-size: 26px;
+        margin-top: 45px;
+    }
+
+    .title_avis::before {
+        height: 3px;
+        width: 15%;
+        left: 45px;
+    }
+
+    .title_avis::after {
+        height: 3px;
+        width: 15%;
+        right: 45px;
+    }
+    .gallery-grid{
+        display: flex;
+        flex: none;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        margin-left: 20px;
+    }
+    .gallery-item{
+        width: 250px;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        font-size: medium;
+
+    }
 }
